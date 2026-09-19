@@ -4,28 +4,76 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Connect 4</title>
-<link rel="stylesheet" href="./style.css" />
+<link rel="stylesheet" href="./style.css?v=5" />
 </head>
 <body>
 <main class="app">
   <h1>Connect 4</h1>
 
-  <div class="controls">
-    <label class="mode-toggle">
-      <span>Mode:</span>
-      <select id="mode-select">
-        <option value="bot">vs Bot</option>
-        <option value="local">2-Player Local</option>
-      </select>
-    </label>
-    <button id="new-game-btn">New Game</button>
-  </div>
+  <section id="screen-landing" class="screen">
+    <p class="tagline">Nasıl oynamak istersin?</p>
 
-  <p id="status-banner" class="status-banner">Loading...</p>
+    <div class="setting-group">
+      <span class="setting-label">Tahta Rengi</span>
+      <div class="option-group swatch-group" id="board-color-group"></div>
+    </div>
 
-  <div id="board" class="board" aria-label="Connect 4 board"></div>
+    <div class="setting-group">
+      <span class="setting-label">1. Oyuncu Rengi</span>
+      <div class="option-group swatch-group" id="player1-color-group"></div>
+    </div>
+
+    <div class="setting-group">
+      <span class="setting-label">2. Oyuncu Rengi</span>
+      <div class="option-group swatch-group" id="player2-color-group"></div>
+    </div>
+
+    <p id="color-error" class="color-error hidden">Lütfen farklı renkte taşlar seçiniz.</p>
+
+    <div class="landing-buttons">
+      <button id="choose-bot-btn" class="big-btn">vs Bot</button>
+      <button id="choose-local-btn" class="big-btn">2 Player (Local)</button>
+    </div>
+  </section>
+
+  <section id="screen-bot-setup" class="screen hidden">
+    <h2>Bot Ayarları</h2>
+
+    <div class="setting-group">
+      <span class="setting-label">Zorluk</span>
+      <div class="option-group" id="difficulty-group">
+        <button type="button" class="option-btn" data-depth="5">Kolay</button>
+        <button type="button" class="option-btn" data-depth="6">Orta</button>
+        <button type="button" class="option-btn" data-depth="7">Zor</button>
+        <button type="button" class="option-btn" data-depth="8">İmkansız</button>
+      </div>
+    </div>
+
+    <div class="setting-group">
+      <span class="setting-label">Kim başlasın</span>
+      <div class="option-group" id="starter-group">
+        <button type="button" class="option-btn" data-starter="human">Ben başlayayım</button>
+        <button type="button" class="option-btn" data-starter="bot">Bot başlasın</button>
+      </div>
+    </div>
+
+    <div class="setup-actions">
+      <button id="bot-back-btn" class="secondary-btn">Geri</button>
+      <button id="bot-start-btn" class="big-btn">Oyunu Başlat</button>
+    </div>
+  </section>
+
+  <section id="screen-game" class="screen hidden">
+    <div class="controls">
+      <button id="new-game-btn" class="secondary-btn">Ana Menü</button>
+    </div>
+
+    <p id="status-banner" class="status-banner">Loading...</p>
+
+    <div id="board" class="board" aria-label="Connect 4 board"></div>
+  </section>
 </main>
 
-<script type="module" src="./main.js"></script>
+<script type="module" src="./main.js?v=5"></script>
 </body>
 </html>

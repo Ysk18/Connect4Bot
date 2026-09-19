@@ -23,6 +23,7 @@ emcc \
   -s EXPORTED_RUNTIME_METHODS='["ccall","cwrap"]' \
   -s ALLOW_MEMORY_GROWTH=1 \
   -s ENVIRONMENT=web,worker \
+  -s EXPORT_ES6=1 \
   -o "$WEB/public/vendor/connect4.js"
 
 echo "Build complete: web/public/vendor/connect4.js + connect4.wasm"

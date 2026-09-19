@@ -59,6 +59,7 @@ publishes it via GitHub Pages (Settings → Pages → Source: GitHub Actions).
   dedicated Web Worker with its own WASM instance, so it never blocks the UI thread.
   The main thread's instance is kept in lockstep by replaying the same move sequence
   (see `main.js`/`bot-worker.js`) rather than by serializing the tree.
-- Default tree depth for the web build is **5** (vs. `main.c`'s original 8), to keep
-  bot turns fast; depth 8 without alpha-beta pruning is too slow for a snappy browser
-  turn. Tune via `TREE_DEPTH` in `public/main.js` if you want to experiment.
+- Bot difficulty is user-selectable in the UI (Kolay/Orta/Zor/İmkansız = depth
+  5/6/7/8). Depth 8 (`main.c`'s original default) has no alpha-beta pruning, so it
+  can be noticeably slower — the Web Worker + "Bot is thinking..." indicator keep
+  the UI responsive while it searches.

@@ -25,6 +25,7 @@ emcc \
   -s ASSERTIONS=1 \
   -s SAFE_HEAP=1 \
   -s ENVIRONMENT=web,worker \
+  -s EXPORT_ES6=1 \
   -o "$WEB/public/vendor/connect4.js"
 
 echo "Debug build complete: web/public/vendor/connect4.js + connect4.wasm"
