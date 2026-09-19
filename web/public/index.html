@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Connect 4</title>
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<main class="app">
+  <h1>Connect 4</h1>
+
+  <div class="controls">
+    <label class="mode-toggle">
+      <span>Mode:</span>
+      <select id="mode-select">
+        <option value="bot">vs Bot</option>
+        <option value="local">2-Player Local</option>
+      </select>
+    </label>
+    <button id="new-game-btn">New Game</button>
+  </div>
+
+  <p id="status-banner" class="status-banner">Loading...</p>
+
+  <div id="board" class="board" aria-label="Connect 4 board"></div>
+</main>
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>
